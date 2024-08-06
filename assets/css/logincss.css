@@ -1,0 +1,435 @@
+/*login*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poiret+One&display=swap');
+
+html, body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+    color: white;
+    font-family: "loto", sans-serif !important;
+    width: 100%;
+  height: 100%;
+}
+h1{
+    text-align: center;
+    margin: 35px !important;
+    color: #ffffff !important;
+  }
+
+::selection{
+    background-color: rgb(190, 159, 225);
+}
+
+:root {
+  --color-bg1: rgb(108, 0, 162);
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 190, 159, 225;
+  --color2: 190, 173, 250;
+  --color3: 225, 204, 236;
+  --color4: 223, 204, 251;
+  --color5: 201, 182, 228;
+  --color-interactive: 241, 241, 246;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+/* ---- Bakcground Animaition ---- */
+
+#gradient-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+    background-color: #000;
+  top: 0;
+    left: 0;
+}
+svg {
+  display: none;
+}
+
+.gradients-container {
+  filter: url(#goo) blur(40px) ;
+  width: 100%;
+  height: 100%;
+ }
+
+.gradient1 {
+   position: absolute;
+   background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+   mix-blend-mode: var(--blending);
+   width: var(--circle-size);
+   height: var(--circle-size);
+   top: calc(50% - var(--circle-size) / 2);
+   left: calc(50% - var(--circle-size) / 2);
+   transform-origin: calc(50% - 200px);
+   animation: moveInCircle 30s ease infinite;
+   opacity: 1;
+}
+
+.gradient2{
+    position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 400px);
+  animation: moveHorizontal 30s infinite;
+  opacity: 1;
+}
+
+.gradient3 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 90s linear infinite;
+  opacity: 1;
+}
+
+.gradient4 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 90s ease infinite;
+  opacity: 0.7;
+}
+
+.gradient5 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: calc(var(--circle-size));
+  height: calc(var(--circle-size)*2);
+  top: calc(50% - var(--circle-size));
+  left: calc(150% - var(--circle-size));
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveVertical 50s reverse infinite;
+  opacity: 1;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+/* --------- Form ----------- */
+
+#form-container{
+  position: absolute;
+  left: 50%;
+    top: 50%;
+  transform: translate(-50%,-50%);
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+   border-radius: 20px;
+   border:1px solid rgba(255, 255, 255, 0.18);
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* -----  Form content  ------ */
+.title{
+    font-weight: 500;
+    font-size: 40pt;
+    color: #FFFFFF !important;
+    text-align: center;
+    margin-bottom: 50px ;
+}
+.msg{
+    margin: 10px;
+}
+input{
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 90%;
+    border-bottom: solid 2px #fff;
+    margin: 10px;
+    font-size: 16px;
+  color: #fff;
+}
+a{
+    color: rgb(190, 173, 250);
+    text-decoration: none;
+    font-weight: 800;
+}
+.label{
+    margin-top: 20px;
+    color: #FFFFFF !important;
+    font-family: "loto", sans-serif !important;
+}
+.submit{
+    margin-top: 70px;
+    color: #fff;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+   border-radius: 5px;
+   border:1px solid rgba(255, 255, 255, 0.18);
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+input:focus{
+    border-bottom: 2px solid #fff;
+        outline: none;
+    font-size: 16px;
+    color: #fff;
+}
+.submit:hover{
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/*form animation*/
+.form-conatiner.animate-signUp .form-wrapper.sign-in {
+    transform: rotate(7deg);
+    animation: animateRotate .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+.form-conatiner.animate-signIn .form-wrapper.sign-in {
+    animation: animateSignIn 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignIn {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+.form-conatiner .form-wrapper.sign-up {
+    transform: rotate(7deg);
+}
+
+.form-conatiner.animate-signIn .form-wrapper.sign-up {
+    animation: animateRotate .7s ease-in-out forwards;
+    animation-delay: .3s;
+}
+
+@keyframes animateRotate {
+    0% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0);
+        z-index: 1;
+    }
+}
+
+.form-conatiner.animate-signUp .form-wrapper.sign-up {
+    animation: animateSignUp 1.5s ease-in-out forwards;
+}
+
+@keyframes animateSignUp {
+    0% {
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0) rotate(7deg);
+    }
+}
+
+
+/*input text*/
+.input-group {
+    position: relative;
+    width: 320px;
+    margin: 30px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 0 10px;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    outline: none;
+    border-radius: 5px;
+}
+/* Input label color */
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #4884DD;
+}
+
+.forgot-pass {
+    margin: -15px 0 15px;
+}
+/* Forgot password text */
+.forgot-pass a {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+/*button*/
+.btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, .8);
+    font-size: 16px;
+    color: #FFFFFF !important;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+button:hover{
+  background: linear-gradient(to right, #5D89F9, #8C05FE) !important;
+  color: white !important;
+  box-shadow: 0 2px 10px rgba(255,255,255 .8);;
+}
+.sign-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 0;
+}
+/* Sign link text */
+.sign-link p {
+    color: #FFFFFF;
+}
+
+.sign-link p a {
+    color: #32C7FF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sign-link p a:hover {
+    text-decoration: underline;
+}
+/*2nd form*/
+.form-wrapper {
+  display: none;
+}
+
+.form-wrapper.animate-out {
+  animation: animateOut 0.5s ease-in-out forwards;
+}
+
+.form-wrapper.animate-in {
+  animation: animateIn 0.5s ease-in-out forwards;
+}
+
+@keyframes animateOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes animateIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 1;
+}
